@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 
 {% if user.is_authenticated %}
 
 Logged in as: {{ user.username }}
-
 <form action="{% url 'logoutuser' %}" method="POST">
   {% csrf_token %}
   <button type="submit" name="submit">Logout</button>
 </form>
+<hr>
 
 {% else %}
 
