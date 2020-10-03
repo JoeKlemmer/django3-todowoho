@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
+    <title>To Do App for {{ user.first_name }}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'todo/stylesheet.css' %}">
@@ -29,7 +29,7 @@
     </nav>
 
 <br /><br />
-Logged in as: {{ user.username }}
+Logged in as: {{ user.first_name }} {{ user.last_name }}
 <form action="{% url 'logoutuser' %}" method="POST">
   {% csrf_token %}
   <button type="submit" name="submit">Logout</button>
@@ -38,8 +38,12 @@ Logged in as: {{ user.username }}
 
 {% else %}
 
-<a href="{% url 'signupuser' %}">Sign up</a>
-<a href="{% url 'loginuser' %}">Login</a>
+<table>
+  <tr>
+    <td><a href="{% url 'signupuser' %}">Sign up</a></td>
+    <td><a href="{% url 'loginuser' %}">Login</a></td>
+  </tr>
+</table>
 
 {% endif %}
 
@@ -50,7 +54,7 @@ Logged in as: {{ user.username }}
 </p>
 
     <footer>
-      &copy 2020 - Joe Klemmer (From design by Nick W)
+      &copy 2020 - Joe Klemmer (From design by Nick Walter)
     </footer>
 
     <!-- JS, Popper.js, and jQuery -->

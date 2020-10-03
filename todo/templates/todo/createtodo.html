@@ -2,14 +2,15 @@
 
 {% block content %}
 
-<h1>Create</h1>
+<h2>Create</h2>
 
-<h2>{{ error }}</h2>
+<h3>{{ error }}</h3>
 
 <form method="POST">
   {% csrf_token %}
   {{ form.as_p}}
-  <button type="submit" name="submit">Save</button>
+  <button type="submit">Save</button>
+  <button type="reset">Reset</button>
 </form>
 
 {% endblock %}

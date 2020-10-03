@@ -19,6 +19,10 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+  text-shadow: 2px 2px 5px;
+}
+
 header {
     text-align: center;
     color: darkblue;
@@ -85,4 +89,9 @@ footer {
   @extend %message-shared;
   font-weight: italic;
   color: red;
+}
+
+blockquote {
+  width: 50%;
+  word-wrap: break-word;
 }
